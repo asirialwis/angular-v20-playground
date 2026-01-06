@@ -5,9 +5,16 @@ import { IdentityStore } from '../../store/identity-store';
   selector: 'app-settings',
   imports: [],
   template: `
+  <div>
     <p>
       settings works! {{ identity.accountStatus() }}
+     
     </p>
+    @if(identity.accountStatus() != 'ACTIVE'){
+      <p style="color:blue;">Your Account is In-active</p>
+    }
+  </div>
+      
   `,
   styleUrl: './settings.scss',
 })
