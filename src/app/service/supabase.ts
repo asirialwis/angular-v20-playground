@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core'
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { Injectable } from '@angular/core';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../environments/environments'
 
 @Injectable({
   providedIn: 'root',
 })
 export class SupabaseService {
-  private supabase: SupabaseClient
+  private supabase: SupabaseClient;
 
   constructor() {
     this.supabase = createClient(
@@ -44,5 +44,14 @@ export class SupabaseService {
 
   getSession() {
     return this.supabase.auth.getSession()
+  }
+
+  async signInWithGoogle() {
+    return await this.supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/`,
+      },
+    });
   }
 }
