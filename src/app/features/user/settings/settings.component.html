@@ -1,0 +1,8 @@
+<div>
+  <p>
+    settings works! {{ identity.accountStatus() }}
+  </p>
+  @if(identity.accountStatus() != 'ACTIVE'){
+    <p style="color:blue;">Your Account is In-active</p>
+  }
+</div>

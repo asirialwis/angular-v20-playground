@@ -7,25 +7,7 @@ import { SupabaseService } from '../../core/services/supabase.service';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="container">
-      <ng-container *ngIf="isLoggedIn">
-        <div class="welcome-card">
-          <h1>Welcome, {{ username }}! 👋</h1>
-          <p>Email: {{ userEmail }}</p>
-          <button (click)="signOut()" class="btn btn-logout">Logout</button>
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="!isLoggedIn">
-        <div class="auth-card">
-          <h2>Please Sign In or Sign Up</h2>
-          <button (click)="goToSignIn()" class="btn btn-primary">Sign In</button>
-          <button (click)="goToSignUp()" class="btn btn-secondary">Sign Up</button>
-        </div>
-      </ng-container>
-    </div>
-  `,
+  templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {

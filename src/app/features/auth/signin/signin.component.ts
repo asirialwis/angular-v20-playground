@@ -7,28 +7,7 @@ import { SupabaseService } from '../../../core/services/supabase.service';
   selector: 'app-signin',
   standalone: true,
   imports: [FormsModule],
-  template: `
-    <div>
-      <h2>Supabase Auth Demo</h2>
-
-      <input
-        type="email"
-        placeholder="Email"
-        [(ngModel)]="email"
-      />
-
-      <input
-        type="password"
-        placeholder="Password"
-        [(ngModel)]="password"
-      />
-
-      <button (click)="signIn()">Login</button>
-      <button (click)="signUp()">Signup</button>
-
-      <p>{{ message }}</p>
-    </div>
-  `,
+  templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
 export class SignInComponent {

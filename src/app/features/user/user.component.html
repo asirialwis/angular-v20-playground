@@ -1,0 +1,13 @@
+<div class="user-layout">
+  <aside>
+    <h2>User: {{ id() }}</h2>
+    <nav>
+      <a [routerLink]="['/user', id(), 'profile']">View Profile</a>
+      <a [routerLink]="['/user', id(), 'settings']">Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <router-outlet />
+  </main>
+</div>
